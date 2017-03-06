@@ -5,7 +5,7 @@
 @software: PyCharm Community Edition
 @file: maxSubarr.py
 @time: 2017/3/2 16:20
-求一个数组中最大的子数组
+求一个数组中最大的子数组，递归处理
 """
 import math
 def find_max_crossing_subarr(arr,low,mid,high):
