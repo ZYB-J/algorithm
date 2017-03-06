@@ -9,7 +9,7 @@
 """
 import math
 def find_max_crossing_subarr(arr,low,mid,high):
-    print('22222222222')
+    print('2222222222266666gg')
 
 
 def find_max_arr(arr,low,high):
@@ -24,4 +24,5 @@ def find_max_arr(arr,low,high):
 if __name__=='__main__':
     arr=[10,1,-4,3,-4]
     find_max_arr(arr,0,4)
+    print('-----------------------------')
 
