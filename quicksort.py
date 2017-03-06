@@ -21,6 +21,7 @@ def patition(arr,low,high):
         swap(arr,low,high)
     return low
 
+#快速排序的递归实现
 def quicksort(arr,a,b):
     if(a>=b):
         return
@@ -39,7 +40,7 @@ class pair(object):
         self.left = left
         self.right = right
 
-
+#快速排序的非递归实现
 def noRecur(arr,a,b):
     stack=[]
     stack.append(pair(a,b))
@@ -49,7 +50,8 @@ def noRecur(arr,a,b):
         p=patition(arr,pr.left,pr.right)
         if p<pr.right:
             stack.append(pair(p+1,b))
-        else:print(p)
+        else:
+            print(p)
         if p>pr.left:
             stack.append(pair(a,p-1))
         else:
