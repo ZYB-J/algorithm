@@ -41,11 +41,9 @@ if __name__=='__main__':
         k-=1
     #N=N-1
     while(N>1):
-        print(arr)
+        #print(arr)
         swap(arr, 0, N-1)
         N=N-1
         sink(arr, 1, N)
     #swap(arr, 0, N)
     print(arr)
-    a=None
-    print(a==None)
