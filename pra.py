@@ -15,10 +15,12 @@ def find_max_crossing_subarr(arr,low,mid,high):
 def find_max_arr(arr,low,high):
     sum=0
     max_sum=0
-    for i in arr:
-        sum=sum+arr[i]
+    for index,i in enumerate(arr):
+        print(index,i)
+        sum=sum+arr[index]
         if sum>max_sum:
             max_sum=sum
+    return max_sum
 
 
 if __name__=='__main__':

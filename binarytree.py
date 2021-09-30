@@ -115,16 +115,71 @@ class Binarytree(object):
         node.left=self._delMinKey(node.left)
         node.num=self.size(node.left)+self.size(node.right)+1
         return node
+
+    def preorderTraversal(self,node:Node):
+        stack=[]
+        while node or len(stack)>0:
+            while node:
+                print(node.key,end=" ")
+                stack.append(node)
+                node = node.left
+
+            if len(stack)>0:
+                node = stack.pop()
+                node = node.right
+
+    def middleorderTraversal(self,node:Node):
+        stack = []
+        while node or len(stack):
+            while node:
+                stack.append(node)
+                node = node.left
+
+            if len(stack):
+                #self.printStack(stack)
+                #print()
+                node = stack.pop()
+                print(node.key, end=" ")
+                node = node.right
+
+    def postorderTraversal(self,node:Node):
+        stack = []
+        lastNode = node
+        while node or len(stack):
+            while node:
+                stack.append(node)
+                node = node.left
+            node = stack[-1]
+            if node.right is None or node.right==lastNode:
+                node = stack.pop()
+                print(node.key,end=" ")
+                lastNode = node
+                node = None
+            else:
+                node = node.right
+    def printStack(self,stack):
+        for i in stack:
+            print(i.key,end=" ")
+
 if __name__=='__main__':
     tree = Binarytree()
-    tree.put(3,6)
+    tree.put(6,6)
     tree.put(4, 10)
     tree.put(1, 11)
+    tree.put(2, 11)
     tree.put(5, 5)
-    tree.printTree()
-    print('1:',tree.get(1))
-    print('44:',tree.get(44))
-    print('max:',tree.getMax())
-    print('min:',tree.getMin())
-    tree.delete(4)
-    tree.printTree()
+    tree.put(7, 5)
+    #tree.printTree()
+    tree.preorderTraversal(tree.root)
+    print()
+    tree.middleorderTraversal(tree.root)
+    print()
+    tree.postorderTraversal(tree.root)
+    # print('1:',tree.get(1))
+    # print('44:',tree.get(44))
+    # print('max:',tree.getMax())
+    # print('min:',tree.getMin())
+    # tree.delete(4)
+    # tree.printTree()
+    l = [1,2,4]
+    #print(l[-1])
